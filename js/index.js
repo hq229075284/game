@@ -1,17 +1,92 @@
 $(function() {
-	var game_cover_left = $(".container-fluid.new div.col-xs-6.col-md-3:nth-child(3n+1)");
-	var game_cover_center = $(".container-fluid.new div.col-xs-6.col-md-3:nth-child(3n+2)");
-	var game_cover_right = $(".container-fluid.new div.col-xs-6.col-md-3:nth-child(3n)");
-	game_cover_left.animate({
-		"opacity":1,
-		"left":"+=100",
-	},2000);
-	game_cover_center.animate({
-		"opacity":1,
-		"bottom":"+=100",
-	},2000);
-	game_cover_right.animate({
-		"opacity":1,
-		"right":"+=100",
-	},2000);
+	$.each(main_index_data, function(index, value) {
+		//绑定每个版块的内容块
+		$("main div.container-fluid." + index+" .row").html(
+			function() {
+				var arr = [];
+				$.each(value, function(i, v) {
+					arr.push("<div class='col-xs-6 col-md-4'>");
+					arr.push("<a href='#' class='thumbnail'>");
+					arr.push("<img src='" + v.game_cover + "' alt='...'/>");
+					arr.push("</a>");
+					arr.push("</div>");
+				});
+				return arr.join("");
+			}
+		);	
+	});
+	
+	
+	//根据视口，适配显示动态
+	var win_init_width = $(window).width();
+	change_response(win_init_width);
+	var response_type;
+	console.log(win_init_width);
+	$(window).resize(function() {
+		var game_cover_left;
+		var game_cover_center;
+		var game_cover_right;
+		var w=$(window).width()
+		if(win_init_width>992){
+			if(!(w>992))
+			{
+				change_response(w);
+			}
+		}else if(win_init_width<992&&win_init_width>768){
+			if(!(w<992&&w>768))
+			{
+				change_response(w);
+			}
+		}else{
+			console.log("alert:window.width only :"+w+"px");
+		}
+//		console.log($(window).width());
+//		change_response();
+	});
+		
+		
+		
+		function change_response(w){
+		if (w > 992) {//$(window).width()
+			game_cover_left = $(".container-fluid div.col-xs-6.col-md-4:nth-child(3n+1)");
+			game_cover_center = $(".container-fluid div.col-xs-6.col-md-4:nth-child(3n+2)");
+			game_cover_right = $(".container-fluid div.col-xs-6.col-md-4:nth-child(3n)");
+			view_big_response_animate(game_cover_left,game_cover_center,game_cover_right);
+		}
+		if (w<992&&w>768) {//$(window).width() < 992 && $(window).width() > 768
+			game_cover_left = $(".container-fluid div.col-xs-6.col-md-4:nth-child(odd)");
+			game_cover_right = $(".container-fluid div.col-xs-6.col-md-4:nth-child(even)");
+			view_middle_response_animate(game_cover_left,game_cover_right);
+		}
+		else{
+//			alert("view small");
+		}
+		}
+		
+		function view_big_response_animate(game_cover_left,game_cover_center,game_cover_right){
+			game_cover_left.animate({
+			"opacity": 1,
+			"left": "+=100",
+		}, 500);
+		game_cover_center.animate({
+			"opacity": 1,
+			"bottom": "+=100",
+		}, 500);
+		game_cover_right.animate({
+			"opacity": 1,
+			"right": "+=100",
+		}, 500);
+		}
+		
+		function view_middle_response_animate(game_cover_left,game_cover_right){
+			game_cover_left.animate({
+			"opacity": 1,
+			"left": "+=100",
+		}, 500);
+		game_cover_right.animate({
+			"opacity": 1,
+			"right": "+=100",
+		}, 500);
+		}
+		
 });
