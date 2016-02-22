@@ -1,46 +1,154 @@
 var main_index_data = {
 	//new_game start
 	"new": [{
-		"game_cover": "../image/header_1.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover1.jpg",
+		"abstract": "火影忍者4",
 	}, {
-		"game_cover": "../image/header_2.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover2.jpg",
+		"abstract": "三國志13",
 	}, {
-		"game_cover": "../image/header_3.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover3.jpg",
+		"abstract": "古墓丽影",
+	}, {
+		"game_cover": "../image/cover4.jpg",
+		"abstract": "侠盗猎车5",
+	},{
+		"game_cover": "../image/cover5.jpg",
+		"abstract": "NBA2k16",
+	}, {
+		"game_cover": "../image/cover6.jpg",
+		"abstract": "全职猎人",
+	}, {
+		"game_cover": "../image/cover7.jpg",
+		"abstract": "孤岛危机",
+	}, {
+		"game_cover": "../image/cover8.jpg",
+		"abstract": "古剑奇谭",
+	},{
+		"game_cover": "../image/cover9.jpg",
+		"abstract": "轩辕剑",
+	}, {
+		"game_cover": "../image/cover10.jpg",
+		"abstract": "乐高大战",
+	}, {
+		"game_cover": "../image/cover11.jpg",
+		"abstract": "巫师3",
+	}, {
+		"game_cover": "../image/cover12.jpg",
+		"abstract": "狂飙车神",
 	}], //new_game end
 	//hot_game start
 	"hot": [{
-		"game_cover": "../image/header_1.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover1.jpg",
+		"abstract": "火影忍者4",
 	}, {
-		"game_cover": "../image/header_2.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover2.jpg",
+		"abstract": "三國志13",
 	}, {
-		"game_cover": "../image/header_3.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover3.jpg",
+		"abstract": "古墓丽影",
+	}, {
+		"game_cover": "../image/cover4.jpg",
+		"abstract": "侠盗猎车5",
+	},{
+		"game_cover": "../image/cover5.jpg",
+		"abstract": "NBA2k16",
+	}, {
+		"game_cover": "../image/cover6.jpg",
+		"abstract": "全职猎人",
+	}, {
+		"game_cover": "../image/cover7.jpg",
+		"abstract": "孤岛危机",
+	}, {
+		"game_cover": "../image/cover8.jpg",
+		"abstract": "古剑奇谭",
+	},{
+		"game_cover": "../image/cover9.jpg",
+		"abstract": "轩辕剑",
+	}, {
+		"game_cover": "../image/cover10.jpg",
+		"abstract": "乐高大战",
+	}, {
+		"game_cover": "../image/cover11.jpg",
+		"abstract": "巫师3",
+	}, {
+		"game_cover": "../image/cover12.jpg",
+		"abstract": "狂飙车神",
 	}], //hot_game end
 	//single_game start
 	"single": [{
-		"game_cover": "../image/header_1.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover1.jpg",
+		"abstract": "火影忍者4",
 	}, {
-		"game_cover": "../image/header_2.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover2.jpg",
+		"abstract": "三國志13",
 	}, {
-		"game_cover": "../image/header_3.jpg",
-		"abstract": "",
+		"game_cover": "../image/cover3.jpg",
+		"abstract": "古墓丽影",
+	}, {
+		"game_cover": "../image/cover4.jpg",
+		"abstract": "侠盗猎车5",
+	},{
+		"game_cover": "../image/cover5.jpg",
+		"abstract": "NBA2k16",
+	}, {
+		"game_cover": "../image/cover6.jpg",
+		"abstract": "全职猎人",
+	}, {
+		"game_cover": "../image/cover7.jpg",
+		"abstract": "孤岛危机",
+	}, {
+		"game_cover": "../image/cover8.jpg",
+		"abstract": "古剑奇谭",
+	},{
+		"game_cover": "../image/cover9.jpg",
+		"abstract": "轩辕剑",
+	}, {
+		"game_cover": "../image/cover10.jpg",
+		"abstract": "乐高大战",
+	}, {
+		"game_cover": "../image/cover11.jpg",
+		"abstract": "巫师3",
+	}, {
+		"game_cover": "../image/cover12.jpg",
+		"abstract": "狂飙车神",
 	}], //single_game end
 	//station_game start
 	"station": [{
-			"game_cover": "../image/header_1.jpg",
-			"abstract": "",
-		}, {
-			"game_cover": "../image/header_2.jpg",
-			"abstract": "",
-		}, {
-			"game_cover": "../image/header_3.jpg",
-			"abstract": "",
-		}] //station_game end
+		"game_cover": "../image/cover1.jpg",
+		"abstract": "火影忍者4",
+	}, {
+		"game_cover": "../image/cover2.jpg",
+		"abstract": "三國志13",
+	}, {
+		"game_cover": "../image/cover3.jpg",
+		"abstract": "古墓丽影",
+	}, {
+		"game_cover": "../image/cover4.jpg",
+		"abstract": "侠盗猎车5",
+	},{
+		"game_cover": "../image/cover5.jpg",
+		"abstract": "NBA2k16",
+	}, {
+		"game_cover": "../image/cover6.jpg",
+		"abstract": "全职猎人",
+	}, {
+		"game_cover": "../image/cover7.jpg",
+		"abstract": "孤岛危机",
+	}, {
+		"game_cover": "../image/cover8.jpg",
+		"abstract": "古剑奇谭",
+	},{
+		"game_cover": "../image/cover9.jpg",
+		"abstract": "轩辕剑",
+	}, {
+		"game_cover": "../image/cover10.jpg",
+		"abstract": "乐高大战",
+	}, {
+		"game_cover": "../image/cover11.jpg",
+		"abstract": "巫师3",
+	}, {
+		"game_cover": "../image/cover12.jpg",
+		"abstract": "狂飙车神",
+	}] //station_game end
 };
