@@ -6,8 +6,11 @@ $(function() {
 				var arr = [];
 				$.each(value, function(i, v) {
 					arr.push("<div class='col-xs-4 col-md-2 col-sm-3'>");
-					arr.push("<a href='#' class='thumbnail'>");
-					arr.push("<img src='" + v.game_cover + "' alt='...'/>");
+					arr.push("<a href='#' class='thumbnail clearfix'>");
+//					arr.push("<section class='hold'><img src='../image/hold.jpg' alt='...'/></section>");
+					arr.push("<section class='cover_front'><img src='" + v.game_cover + "' alt='...'/></section>");
+//					arr.push("<section class='cover_left'><img src='../image/game_left.jpg' alt='...'/></section>");
+//					arr.push("<section class='cover_top'><img src='../image/game_top.jpg' alt='...'/></section>");
 					arr.push("<div class='abso_bottom_title'>" + v.abstract + "</div>");
 					arr.push("<div class='abso_bottom_time'>" + "上市时间：2016.05.13" + "</div>");
 					arr.push("</a>");
@@ -95,5 +98,13 @@ $(function() {
 			_thumbnail.css("margin-bottom", "30px");
 		}
 	}
-
+	
+	function calculate_deg_for_cover_front(cover_width){
+		var offset_left=((2-Math.sqrt(3))/4)*cover_width;
+		return offset_left;
+	}
+	function calculate_deg_for_cover_left(cover_width){
+		var offset_left=cover_width/4;
+		return offset_left;
+	}
 });
