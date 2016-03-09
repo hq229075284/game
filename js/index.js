@@ -1,4 +1,4 @@
-$(function() {
+//$(function() {
 	$.each(main_index_data, function(index, value) {
 		//绑定每个版块的内容块
 		$("main div.container-fluid." + index + " .row").html(
@@ -7,8 +7,11 @@ $(function() {
 				$.each(value, function(i, v) {
 					arr.push("<div class='col-xs-4 col-md-2 col-sm-3'>");
 					arr.push("<a href='#' class='img_block'>");
-					arr.push("<section class='cover_front'><img src='" + v.game_cover + "' alt='...' data_src='"+v.game_cover+"' /></section>");
+//					arr.push("<section class='cover_front'><img class='lazy' src='" + v.game_cover + "' alt='...' data-src='"+v.game_cover+"' />");
+arr.push("<section class='cover_front'><img class='lazy' alt='...' data-original='"+v.game_cover+"' />");
+//					arr.push("<section class='cover_front'><img src='http://image.gamersky.com/webimg15/lazyloadplaceholder.gif' alt='...' data-src='"+v.game_cover+"' />");
 					arr.push("<div class='abso_bottom_title'>" + v.abstract + "</div>");
+					arr.push("</section>");
 					arr.push("<div class='abso_bottom_time'>" + "上市时间：2016.05.13" + "</div>");
 					arr.push("</a>");
 					arr.push("</div>");
@@ -16,9 +19,11 @@ $(function() {
 				return arr.join("");
 			}
 		);
+		
 	});
 
-
+	
+	
 	//根据视口，适配显示动态
 	// var win_init_width = $(window).width();
 	// var _abso_bottom_time = $(".abso_bottom_time");
@@ -42,4 +47,4 @@ $(function() {
 	// 		_img_block.css("margin-bottom", "30px");
 	// 	}
 	// }
-});
+//});

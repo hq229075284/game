@@ -106,7 +106,9 @@
         <div class="container-fluid new">
             <div class="row">
             </div>
+            <div class="more"><a href="#">更多</a></div>
         </div>
+        
         <!--热门游戏-->
         <div class="container-fluid">
             <div class="page-header">
@@ -116,6 +118,7 @@
         <div class="container-fluid hot">
             <div class="row">
             </div>
+            <div class="more"><a href="#">更多</a></div>
         </div>
         <!--单机游戏-->
         <div class="container-fluid">
@@ -126,6 +129,7 @@
         <div class="container-fluid single">
             <div class="row">
             </div>
+            <div class="more"><a href="#">更多</a></div>
         </div>
         <!--主机游戏-->
         <div class="container-fluid">
@@ -136,16 +140,27 @@
         <div class="container-fluid station">
             <div class="row">
             </div>
+            <div class="more"><a href="#">更多</a></div>
         </div>
     </main>
+    <footer>
+    	
+    </footer>
 </body>
 <script src="../js/jquery.min.js"></script>
 <!--<script src="../js/bootstrap.min.js"></script>-->
 <script src="../js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
-
+<script src="../js/jq.lazyload.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/data.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
-<script src="../js/delayLoading.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	console.log($("img.lazy"));
+	$("img.lazy").lazyload({
+		container: $("body"),
+		effect:"fadeIn", 
+	});
+</script>
+<!--<script src="../js/delayLoading.min.js" type="text/javascript" charset="utf-8"></script>-->
 <!--<script type="text/javascript">
 		(function() {
 			var s = document.createElement("script");
