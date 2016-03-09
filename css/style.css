@@ -32,12 +32,10 @@ img {
 }
 
 .prev_tag {
-	/*position: absolute;
+	position: absolute;
 	top: 50%;
 	left: 0;
-	margin: 0 auto;
-	margin-top: -50%;*/
-	
+	transform: translateY(-50%);
 	width: 100%;
 	max-width: 50px;
 }
@@ -46,7 +44,7 @@ img {
 	position: absolute;
 	top: 50%;
 	right: 0;
-	margin-top: -50%;
+	transform: translateY(-50%);
 	width: 100%;
 	max-width: 50px;
 }
@@ -79,13 +77,11 @@ p.carousel-caption {
 }
 div.col-xs-4.col-md-2.col-sm-3{
 }
-.thumbnail{
+
+.img_block{
 	padding: 0;
 	border-radius: 0;
 	position: relative;
-	transform-style: preserve-3d;
-	perspective:1000px;
-	perspective-origin: top;
 }
 
 
@@ -140,9 +136,6 @@ section.cover_top{
 	}
 	div.col-xs-4.col-md-2.col-sm-3:nth-child(3n){
 		padding:0 4px 0 1px;
-	}
-	.thumbnail{
-		margin-bottom: 30px;
 	}
 	.abso_bottom_time{
 		font-size: 12px;
