@@ -1,4 +1,4 @@
-//$(function() {
+$(function() {
 	$.each(main_index_data, function(index, value) {
 		//绑定每个版块的内容块
 		$("main div.container-fluid." + index + " .row").html(
@@ -21,30 +21,10 @@ arr.push("<section class='cover_front'><img class='lazy' alt='...' data-original
 		);
 		
 	});
-
 	
+	$("img.lazy").lazyload({
+//		container: $("body"),
+		effect:"fadeIn", 
+	});
 	
-	//根据视口，适配显示动态
-	// var win_init_width = $(window).width();
-	// var _abso_bottom_time = $(".abso_bottom_time");
-	// var _img_block = $(".img_block");
-	// adapt_low_screen(win_init_width);
-	// $(window).resize(function() {
-	// 	var w = $(window).width();
-	// 	adapt_low_screen(w);
-	// });
-
-	// function adapt_low_screen(w) {
-	// 	if (w < 385) {
-	// 		_abso_bottom_time.css({
-	// 			'bottom': "-40px"
-	// 		});
-	// 		_img_block.css('margin-bottom', "50px");
-	// 	} else {
-	// 		_abso_bottom_time.css({
-	// 			"bottom": "-20px"
-	// 		});
-	// 		_img_block.css("margin-bottom", "30px");
-	// 	}
-	// }
-//});
+});
