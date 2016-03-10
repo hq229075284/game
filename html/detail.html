@@ -1,9 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title></title>
-	</head>
-	<body>
-	</body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
+    <meta name="keywords" content="Game Show">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <!-- <link rel="stylesheet" href="../css/detail.css"> -->
+    <title></title>
+</head>
+
+<body ng-app="detail">
+<section ng-controller="detail_head">
+<h1>{{game_name}}</h1>
+<section>
+	<div><img src="{{game_cover}}" alt=""></div>
+	<section>
+		<table>
+			<tr><td>中文名称:</td><td>{{data.game_cn_name}}</td><td>英文名称:</td><td>{{data.game_en_name}}</td></tr>
+			<tr><td>发布日期:</td><td>{{data.game_release_time}}</td><td>游戏制作:</td><td>{{data.game_maker}}</td></tr>
+			<tr><td>游戏发行:</td><td>{{data.game_business}}</td><td>文件大小:</td><td>{{data.game_size}}</td></tr>
+			<tr><td>游戏语言:</td><td>{{data.game_language}}</td><td>运行系统:</td><td>{{data.game_exe_system}}</td></tr>
+		</table>
+	</section>
+	<section><em class=""></em><em ng-repeat="(key, value) in data.tag">value</em></section>
+</section>
+</section>
+
+</body>
+<script src="https://cdn.bootcss.com/angular.js/1.5.0/angular.js" type="text/javascript" charset="utf-8"></script>
+<script scr="../js/jquery.min.js"></script>
+<script scr="../js/detail.js"></script>
 </html>

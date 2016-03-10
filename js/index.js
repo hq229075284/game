@@ -1,4 +1,5 @@
 $(function() {
+	console.log($("body").outerWidth());
 	$.each(main_index_data, function(index, value) {
 		//绑定每个版块的内容块
 		$("main div.container-fluid." + index + " .row").html(
