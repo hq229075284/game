@@ -1,3 +1,11 @@
-html{font-size: 20px}
+.cover{padding-bottom: 0.5rem;text-align: center;}
 .info_section{font-size: 0.5rem;text-align: center;}
 .info_section table td{vertical-align: middle;}
+.info_section table td:nth-child(2){padding-right: 0.5rem}
+#lightslider{text-align: center;}
+img{width: 100%;}
+@media screen and (min-width: 100px) and (max-width: 767px) {
+	html{font-size: 20px;}
+	.game_image{}
+	.center-block{width: 90%;}
+}

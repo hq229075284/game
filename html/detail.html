@@ -9,6 +9,7 @@
     <meta name="keywords" content="Game Show">
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="../css/lightslider.css">
     <link rel="stylesheet" href="../css/detail.css">
     <title></title>
 </head>
@@ -18,7 +19,9 @@
     <section ng-controller="detail_head" class="detail_head">
         <h1>{{data.game_title}}</h1>
         <section>
-            <div class="cover"><img ng-src="{{data.game_cover}}" alt=""></div>
+            <section class="cover">
+                <img ng-src="{{data.game_cover}}" alt="">
+            </section>
             <section class="info_section">
                 <table>
                     <tr>
@@ -53,49 +56,49 @@
         </section>
     </section>
     <!-- detail_head end -->
-    <!-- detail_nav start -->
-    <nav class="middle_nav">
-        <ul>
-            <li>游戏介绍</li>
-            <li>游戏下载</li>
-        </ul>
-    </nav>
-    <!-- detail_nav end -->
-    <!-- game_introduction start-->
-    <section>
-        <pre ng-repeat="(key, value) in data.game_info">{{value}}</pre>
-    </section>
-    <!-- game_introduction end -->
-    <!-- game_video start-->
-    <section class="game_video">
-        <h3>游戏视频</h3>
+    <section ng-controller="detail_body">
+        <!-- detail_nav start -->
+        <nav class="middle_nav">
+            <ul>
+                <li>游戏介绍</li>
+                <li>游戏下载</li>
+            </ul>
+        </nav>
+        <!-- detail_nav end -->
+        <!-- game_introduction start-->
         <section>
-            <video controls src="" type="" hidden></video>
-            <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
-                <param name="allowFullScreen" value="true">
-                <param name="allowScriptAccess" value="always">
-                <param name="movie" value="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf">
-                <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=6bfe5b183f11e7d9&amp;isAutoPlay=false&amp;isShowRelatedVideo=false">
-            </object>
+            <pre ng-repeat="(key, value) in data.game_info">{{value}}</pre>
         </section>
+        <!-- game_introduction end -->
+        <!-- game_video start-->
+        <section class="game_video">
+            <h3>游戏视频</h3>
+            <section>
+                <video controls src="" type="" hidden></video>
+                <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
+                    <param name="allowFullScreen" value="true">
+                    <param name="allowScriptAccess" value="always">
+                    <param name="movie" value="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf">
+                    <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=6bfe5b183f11e7d9&amp;isAutoPlay=false&amp;isShowRelatedVideo=false">
+                </object>
+            </section>
+        </section>
+        <!-- game_video end-->
+        <!-- game_image start-->
+        <section class="game_image">
+            <h3>游戏截图</h3>
+            <section class="center-block">
+                <ul id="lightslider">
+                    <li ng-repeat="(key, value) in data.game_image" data-thumb="../image/{{value}}.jpg"><img src ng-src="../image/{{value}}.jpg" img-path-load></li>
+                </ul>
+            </section>
+        </section>
+        <!-- game_image end-->
     </section>
-    <!-- game_video end-->
-    <!-- game_image start-->
-    <section>
-    	<h3>游戏截图</h3>
-    	<section>
-    		<ul>
-    			<li ng-repeat="(key, value) in data.game_image"><img ng-src="../image/{{value}}.jpg"></li>
-    		</ul>
-    		<ul>
-    			<li ng-repeat="(key, value) in data.game_image"><img ng-src="../image/s{{value}}.jpg"></li>
-    		</ul>
-    	</section>
-    </section>
-    <!-- game_image end-->
 </body>
 <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/detail_data.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../js/lightslider.js" charset="utf-8"></script>
 <script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
 <script src="../js/detail.js" type="text/javascript" charset="utf-8"></script>
 
