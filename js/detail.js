@@ -9,28 +9,32 @@
             loop: true, //是否循环
             pause: 2000, //自动轮播时间间隔
             controls: false, //是否显示控制按钮
-            thumbItem: 5, //缩略图显示张数
+            thumbItem: 3, //缩略图显示张数
             pager: true, //圆点导航
             thumbMargin: 0, //
             currentPagerPosition: "middle",
             enableTouch: true,
             slideMargin: 0,
             gallery: true,
-            autoWidth:false,
+            autoWidth: false,
         });
     }
 
     var app = angular.module("detail", []);
-    app.controller('detail_head', function($scope, $rootScope) {
+    app.controller('detail_head',function($scope, $rootScope) {
+        console.log(data[0]);
         $rootScope.data = data[0];
+        console.log($rootScope);
+        // $rootScope.convertSrc = function(url) {
+        //     console.log($sce.trustAsResourceUrl(url));
+        //     return $sce.trustAsResourceUrl(url);
+        // };
     });
 
     app.controller('detail_body', function($scope) {
-    	// carousel();
+        // console.log($(".detail_body")[0]);
         $scope.$on('pathLoadOver', function(pathLoadOverEvent) {
             //下面是在li render完成后执行的js
-            console.log("this");
-            console.log(this);
             carousel();
         });
     });
@@ -54,19 +58,7 @@
             restrict: 'A',
             link: function($scope, iElm, iAttrs, controller) {
                 if ($scope.$last == true) {
-                    console.log("$scope");
-                    console.log($scope);
-                    console.log("iElm");
-                    console.log(iElm);
-                    console.log("iAttrs");
-                    console.log(iAttrs);
-                    console.log("controller");
-                    console.log(controller);
-                    // $scope.$apply(function(){iAttrs.src=iAttrs.ngSrc;});
-                    // $timeout(function(){$scope.$emit('pathLoadOver')});
                     $scope.$emit('pathLoadOver');
-                    console.log("iElm");
-                    console.log(iElm);
                 }
             }
         };
@@ -77,12 +69,35 @@
 
 
 
-
-
 // jquery
 (function($) {
     $(function() {
-        console.log("light");
+        (function() {
+            // middle_nav binding scroll event
+            var nav = $(".middle_nav");
+
+            function nav_position() {
+                var nav_inite_top = nav.offset().top;
+                $(window).scroll(function(e) {
+                    console.log(nav_inite_top);
+                    console.log($(this).scrollTop());
+                    if (!(nav_inite_top > $(this).scrollTop())) {
+                        if (!nav.hasClass("fixed")) {
+                            nav.addClass("fixed");
+                        }
+                    } else {
+                        if (nav.hasClass("fixed")) {
+                            nav.removeClass("fixed");
+                        }
+                    }
+                }).triggerHandler("scroll");
+            }
+
+            $(window).on("load", nav_position);
+            $(window).on("resize", nav_position);
+        })();
+
+
 
     });
 })(jQuery);

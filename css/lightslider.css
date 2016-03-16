@@ -173,7 +173,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, .7);
     content: "";
-    box-shadow: 0 0 6px 4px rgba(204, 204, 204, .7) inset;
+    box-shadow: 0 0 6px 0px rgba(204, 204, 204, .7) inset;
 }
 
 .lSSlideOuter .lSPager.lSGallery img {

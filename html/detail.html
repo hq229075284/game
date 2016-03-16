@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no,minimum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8">-->
     <meta name="keywords" content="Game Show">
@@ -18,7 +18,7 @@
     <!-- detail_head start -->
     <section ng-controller="detail_head" class="detail_head">
         <h1>{{data.game_title}}</h1>
-        <section>
+        <section class="game_info">
             <section class="cover">
                 <img ng-src="{{data.game_cover}}" alt="">
             </section>
@@ -50,20 +50,21 @@
                     </tr>
                 </table>
             </section>
-            <section>
-                <em class="">tag:</em><em ng-repeat="(key, value) in data.tag">{{value}}</em>
+            <section class="game_tag">
+                <em class="tag"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></em><em ng-repeat="(key, value) in data.tag">{{value}}</em>
             </section>
         </section>
     </section>
     <!-- detail_head end -->
-    <section ng-controller="detail_body">
+    <section ng-controller="detail_body" class="detail_body">
         <!-- detail_nav start -->
         <nav class="middle_nav">
-            <ul>
-                <li>游戏介绍</li>
+            <ul class="nav_list clearfix">
+                <li class="active">游戏介绍</li>
                 <li>游戏下载</li>
             </ul>
         </nav>
+        <nav class="nav_hold"></nav>
         <!-- detail_nav end -->
         <!-- game_introduction start-->
         <section>
@@ -74,7 +75,9 @@
         <section class="game_video">
             <h3>游戏视频</h3>
             <section>
-                <video controls src="" type="" hidden></video>
+                <video controls ng-src="{{data.game_video}}" poster="../image/{{data.video_poster}}.jpg">
+                    <source type="video/mp4" ng-srcset="../video/{{data.game_video}}">    
+                </video>
                 <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
                     <param name="allowFullScreen" value="true">
                     <param name="allowScriptAccess" value="always">
@@ -87,9 +90,11 @@
         <!-- game_image start-->
         <section class="game_image">
             <h3>游戏截图</h3>
-            <section class="center-block">
+            <section class="img_block">
                 <ul id="lightslider">
-                    <li ng-repeat="(key, value) in data.game_image" data-thumb="../image/{{value}}.jpg"><img src ng-src="../image/{{value}}.jpg" img-path-load></li>
+                    <li data-thumb="../image/1.jpg"><img src="../image/1.jpg" alt=""></li>
+                    <li ng-repeat="(key, value) in data.game_image" data-thumb="{{value}}"><img ng-src="{{value}}" img-path-load></li>
+                    <li data-thumb="../image/10.jpg"><img src="../image/10.jpg" alt=""></li>
                 </ul>
             </section>
         </section>
