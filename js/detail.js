@@ -21,7 +21,7 @@
     }
 
     var app = angular.module("detail", []);
-    app.controller('detail_head',function($scope, $rootScope) {
+    app.controller('detail_head', function($scope, $rootScope) {
         console.log(data[0]);
         $rootScope.data = data[0];
         console.log($rootScope);
@@ -72,15 +72,25 @@
 // jquery
 (function($) {
     $(function() {
+        //nav scroll
         (function() {
             // middle_nav binding scroll event
             var nav = $(".middle_nav");
-
+            var game_download = $(".game_download");
+            var download_li = $("li:contains('游戏下载')");
+            var info_li = $("li:contains('游戏介绍')");
+            // console.log("one_nav");
+            // console.log($(window).scroll(function(){}));
             function nav_position() {
-                var nav_inite_top = nav.offset().top;
+                // var nav_inite_top = nav.offset().top;
+                var nav_inite_top = $(".nav_hold").offset().top;
                 $(window).scroll(function(e) {
-                    console.log(nav_inite_top);
-                    console.log($(this).scrollTop());
+                    // console.log(e.target);
+                    // e.stopPropagation();
+                    // console.log("nav_inite_top");
+                    // console.log(nav_inite_top);
+                    // console.log("$(this).scrollTop()");
+                    // console.log($(this).scrollTop());
                     if (!(nav_inite_top > $(this).scrollTop())) {
                         if (!nav.hasClass("fixed")) {
                             nav.addClass("fixed");
@@ -90,14 +100,99 @@
                             nav.removeClass("fixed");
                         }
                     }
+
+                    //区域绑定标签
+                    if (!$("body").is(":animated")) {
+                        if (game_download.offset().top - $(this).scrollTop() < $(this).outerWidth() / 2) {
+                            if (!download_li.hasClass('active')) {
+                                download_li.addClass('active').siblings('li').removeClass('active');
+                            }
+                        } else {
+                            if (!info_li.hasClass('active')) {
+                                info_li.addClass('active').siblings('li').removeClass('active');
+                            }
+                        }
+                    }
+
+                    if (!$(".Top").is(":animated")) {
+                        if ($(window).scrollTop() > 300) {
+                            // console.log(typeof $(".Top").css("opacity"));
+                            if ($(".Top").css("opacity") === "0") {
+                                $(".Top").css("display", "block");
+                                $(".Top").animate({
+                                    "opacity": 1
+                                }, 600);
+                            }
+                        } else {
+                            if ($(".Top").css("opacity") === "1") {
+                                $(".Top").animate({
+                                    "opacity": 0
+                                }, 600, function() {
+                                    $(".Top").css("display", "none");
+                                });
+                            }
+                        }
+                    }
+
+
                 }).triggerHandler("scroll");
             }
 
-            $(window).on("load", nav_position);
-            $(window).on("resize", nav_position);
+            $(window).on("load", function() {
+                console.log("load");
+                nav_position();
+            });
+            $(window).on("resize", function() {
+                console.log("resize");
+                nav_position();
+            });
         })();
 
+        //nav li click 中间导航栏点击后的定位
+        (function() {
+            var nav_li = $(".middle_nav li");
+            nav_li.click(function(e) {
+                e.stopPropagation();
+                console.log($(this).text());
+                if (!$(this).hasClass('active')) {
+                    $(this).addClass('active').siblings('li').removeClass('active');
+                }
+                if (this.childNodes[1].data == "游戏下载") {
+                    $("body").animate({
+                        scrollTop: ($(".game_download").offset().top - 30)
+                    }, 1000);
+                } else {
+                    $("body").animate({
+                        scrollTop: ($(".detail_body").offset().top - 10)
+                    }, 1000);
+                }
+            });
+        })();
 
+        //注册火箭返回页面顶部的动画
+        (function() {
+
+            $(".Top").click(function(event) {
+                event.stopPropagation();
+                console.log("click");
+                if (!$(".Top").is(":animated")) {
+
+                    if ($(".Top").css("opacity") === "1") {
+                        // console.log("none");
+                        $(".Top").animate({
+                            "opacity": 0,
+                            "bottom": "400px"
+                        }, 600, function() {
+                            $(this).css("bottom", "15px");
+                        });
+
+                        $("body").animate({ "scrollTop": 0 }, 600);
+                    }
+                }
+
+            });
+
+        })();
 
     });
 })(jQuery);

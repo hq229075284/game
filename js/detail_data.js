@@ -15,7 +15,10 @@ var data=[{
 	"年度版全DLCs列表：\nomb Raider: Scavenger Executioner\nTomb Raider: Tomb of the Lost Adventurer\nTomb Raider: Shipwrecked Multiplayer Map Pack\nTomb Raider: Demolition Skin\nTomb Raider: Mountaineer Skin\nTomb Raider: Sure-Shot Skin\nTomb Raider: Caves and Cliffs Multiplayer Map Pack\nTomb Raider: 1939 Multiplayer Map Pack\nTomb Raider: JAGD P22G\nTomb Raider: M590 12ga\nTomb Raider: HX AP-15\nTomb Raider: STG 58 Elite\nTomb Raider: Animal Instinct\nTomb Raider: Headshot Reticule\nTomb Raider: Scavenger Scout\nTomb Raider: Scavenger Bandit\nTomb Raider: Fisherman\nTomb Raider: Silverballer\nTomb Raider: Agency SPS 12\nTomb Raider: Agility Skill\nTomb Raider: Pistol Burst\nTomb Raider: Pistol Silencer\nTomb Raider: Hunter Skin\nTomb Raider: Aviatrix Skin\nTomb Raider: Guerilla Skin\nTomb Raider: Shanty Town"],
 	"game_image":["../image/2.jpg","../image/3.jpg","../image/4.jpg","../image/5.jpg","../image/6.jpg","../image/7.jpg","../image/8.jpg","../image/9.jpg"],
 	"game_video":"../video/gumu.mp4",
-	"video_poster":"poster",
+	"video_poster":"../image/poster.jpg",
+	"version":"版本：官方中文PC正式豪华版。\n运行：\n1、解压压缩包\n2、正版玩家请运行Origin.Games.Reg.Tools.v1.1-3DM.exe，然后再登录Origin即可识别游戏\n3、运行游戏\n注：游戏确认全程联网并且采用Denuvo加密，故只需入正，无需等待未加密补丁。",
+	"QA":[{"title":"《极品飞车19》Origin版发售时间问题解决","href":"#"},{"title":"《极品飞车19》无法连接EA服务器解决方法","href":"#"}],
+	"torrent":"../torrent/HITMAN.EP1.HD.torrent",
 }];
 
 

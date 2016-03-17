@@ -15,12 +15,13 @@
 </head>
 
 <body ng-app="detail">
+<section class="Top"></section>
     <!-- detail_head start -->
     <section ng-controller="detail_head" class="detail_head">
         <h1>{{data.game_title}}</h1>
         <section class="game_info">
             <section class="cover">
-                <img ng-src="{{data.game_cover}}" alt="">
+                <img ng-src="{{data.game_cover}}" alt="" style="position: relative;z-index: 2;">
             </section>
             <section class="info_section">
                 <table>
@@ -60,8 +61,8 @@
         <!-- detail_nav start -->
         <nav class="middle_nav">
             <ul class="nav_list clearfix">
-                <li class="active">游戏介绍</li>
-                <li>游戏下载</li>
+                <li class="active"><i class="iconfont">&#xe620;</i>游戏介绍</li>
+                <li><i class="iconfont">&#xe6e5;</i>游戏下载</li>
             </ul>
         </nav>
         <nav class="nav_hold"></nav>
@@ -75,8 +76,11 @@
         <section class="game_video">
             <h3>游戏视频</h3>
             <section>
-                <video controls ng-src="{{data.game_video}}" poster="../image/{{data.video_poster}}.jpg">
-                    <source type="video/mp4" ng-srcset="../video/{{data.game_video}}">    
+                <!-- <video controls src="../video/gumu.mp4" poster="../image/poster.jpg">
+                    <source type="video/mp4" src="../video/gumu.mp4">    
+                </video> -->
+                <video controls ng-src="{{data.game_video}}" poster="{{data.video_poster}}">
+                    <source type="video/mp4" ng-src="{{data.game_video}}">
                 </video>
                 <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
                     <param name="allowFullScreen" value="true">
@@ -99,6 +103,29 @@
             </section>
         </section>
         <!-- game_image end-->
+        <section style="" class="game_download">
+            <h3>游戏下载</h3>
+            <section class="center-block">
+                <button type="button" class="btn btn-info"><a ng-href="{{data.torrent}}" style="color:#fff;text-decoration:none;">BT下载</a></button>
+            </section>
+        </section>
+        <section class="game_statement">
+            <section class="">
+                <h3>版本及运行说明</h3>
+                <pre>{{data.version}}</pre>
+            </section>
+            <section class="">
+                <h3>常见问题</h3>
+                <div class="QA">
+                    <ul class="">
+                        <li ng-href="{{value.href}}" ng-repeat="(key, value) in data.QA"><a ng-href="{{value.href}}">{{value.title}}</a></li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </section>
+    <section class="detail_footer">
+        <img src="../image/footer.jpg" style="max-width:100%" alt="">
     </section>
 </body>
 <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
