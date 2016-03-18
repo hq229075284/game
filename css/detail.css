@@ -5,19 +5,22 @@ table {
 }
 
 body {
-    max-width: 1000px;
-    margin: 0 auto;
+    
 }
 
 video {
     max-width: 100%;
     margin: 0 auto;
+    display: block;
 }
 
 pre {
     overflow: hidden;
 }
-
+main{
+    max-width: 1000px;
+    margin: 0 auto;
+}
 @font-face {
     font-family: 'iconfont';
     src: url('../fonts/iconfont.eot');
@@ -28,7 +31,11 @@ pre {
     url('../fonts/iconfont.svg#iconfont') format('svg');
     /* iOS 4.1- */
 }
-
+#meun i{
+    text-align: center;
+    display: inline-block;
+    width: 30px;
+}
 .iconfont {
     font-family: "iconfont" !important;
     font-size: 16px;
@@ -65,21 +72,19 @@ pre {
 }
 
 .info_section table td:nth-child(1) {
-    padding-right: .2rem;
-    text-align: left;
+    color:#888;
 }
 
 .info_section table td:nth-child(2) {
-    padding-right: .5rem;
 }
-
+.info_section table td:nth-child(3){
+    color:#888;
+}
 
 /*game_tag*/
 
 .game_tag {
-    padding-top: .8rem;
-    padding-left: .8rem;
-    text-align: left;
+    text-align: center;
 }
 
 .game_tag .tag {
@@ -171,6 +176,13 @@ pre {
         /*border: 1px solid #000;*/
         opacity: 0;
     }
+    .form-group{
+        width:72%;
+        display:inline-block;
+    }
+    nav{
+        font-size: 18px;
+    }
     .detail_head {
         width: 96%;
         margin: 0 auto;
@@ -213,6 +225,231 @@ pre {
     .game_tag {
         font-size: 16px;
         line-height: 20px;
+    }
+    .game_tag em {
+        padding: 1.5px .2rem;
+    }
+    .game_tag .tag:before {
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        display: block;
+        content: '';
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+        transform: translateY(-50%);
+        border: .2rem solid transparent;
+        border-left-color: #e7e7e7;
+    }
+    .glyphicon {
+        top: 2px;
+    }
+    /*detail_body*/
+    .detail_body {
+        width: 96%;
+        margin: 0 auto;
+        background-color: #fff;
+        position: relative;
+        margin: 1rem auto;
+    }
+    .detail_body img {
+        width: 100%;
+    }
+    /*middle_nav*/
+    .middle_nav {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    .nav_hold {
+        margin-bottom: 0.8rem;
+        font-size: 16px;
+        text-align: center;
+        height: 1.5rem;
+        top: 0;
+    }
+    .middle_nav.fixed {
+        width: 96%;
+        margin: 0 auto;
+        -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.25);
+        box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.25);
+    }
+    .middle_nav .nav_list {}
+    .middle_nav li {
+        position: relative;
+        display: block;
+        width: 50%;
+        height: 1.5rem;
+        line-height: 1.5rem;
+        float: left;
+        border: 1px solid #c9c9c9;
+        margin-left: -1px;
+        background-color: #e9e9e9;
+    }
+    .middle_nav li.active {
+        border-top: 2px solid #007ec0;
+        border-bottom: 0;
+        /*background:linear-gradient(to top,rgba(1,1,1,0) 0%,#fff 8%);
+        background:-webkit-linear-gradient(bottom,rgba(1,1,1,0) 0%,#fff 8%);*/
+        background-color: #fff;
+    }
+    .middle_nav li.active:before {
+        position: absolute;
+        left: 50%;
+        top: -1px;
+        content: '';
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+        -o-transform: translateX(-50%);
+        transform: translateX(-50%);
+        border: 10px solid transparent;
+        border-top-color: #007ec0;
+    }
+    .game_image .img_block {
+        width: 96%;
+        margin: 0 auto;
+        padding: 0.2rem;
+        box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        -wekit-box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+    }
+    .game_download section {
+        width: 96%;
+    }
+    .QA {
+        width: 96%;
+        margin: 0 auto 1rem;
+        box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        -wekit-box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        background-color: #fff;
+        border-width: 0;
+        font-size: 14px;
+        line-height: 18px;
+        padding: 10px;
+    }
+    .QA ul li {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        background-position: 0px 0px;
+    }
+    .QA ul li a {
+        color: #151515;
+    }
+}
+
+/*适配平板和桌面显示器*/
+
+@media screen and (min-width: 768px) {
+    html,
+    body {
+        font-size: 28px;
+        background-color: #f2f2f3;
+    }
+    pre {
+        width: 96%;
+        margin: 0 auto 1rem;
+        box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        -wekit-box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        background-color: #fff;
+        border-width: 0;
+    }
+    h3 {
+        font-size: 16px;
+        line-height: 20px;
+        border-left: 3px solid rgb(0, 126, 192);
+        height: 20px;
+        margin-left: 7px;
+        padding-left: 5px;
+    }
+    .Top {
+        width: 60px;
+        height: 60px;
+        position: fixed;
+        display: none;
+        z-index: 99;
+        bottom: 15px;
+        right: 12px;
+        border-radius: 50%;
+        background: url(../image/Top.png) no-repeat;
+        background-size: 800%;
+        background-position: -88px -8px;
+        overflow: hidden;
+        /*border: 1px solid #000;*/
+        opacity: 0;
+    }
+    .form-group{
+    }
+    nav{
+        font-size: 14px;
+    }
+    .detail_head {
+        width: 96%;
+        margin: 0 auto;
+        padding: .4rem;
+        box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+        -wekit-box-shadow: 0 5px 10px 0 rgba(206, 206, 206, 1);
+    }
+    .detail_head h1 {
+        font-size: 22px;
+        margin: .5rem auto;
+        padding-bottom: 0.2rem;
+        border-bottom: 2px dashed #e7e7e7;
+        text-align: center;
+    }
+    .detail_head .cover:before {
+        content: "";
+        position: absolute;
+        width: 45%;
+        height: 5%;
+        bottom: 2%;
+        left: 3%;
+        -webkit-box-shadow: 0 5px 10px 0px rgba(1, 1, 1, 1);
+        box-shadow: 0 5px 15px 4px rgba(1, 1, 1, 1);
+        transform: rotate(-3deg);
+        z-index: 1;
+    }
+    .detail_head .cover:after {
+        content: "";
+        z-index: 1;
+        position: absolute;
+        width: 45%;
+        height: 5%;
+        bottom: 2%;
+        right: 3%;
+        -webkit-box-shadow: 0 5px 10px 0px rgba(1, 1, 1, 1);
+        box-shadow: 0 5px 15px 4px rgba(1, 1, 1, 1);
+        transform: rotate(3deg);
+    }
+    /*游戏标签样式*/
+    .game_tag:before {
+        content: ""
+    }
+    .game_tag {
+        padding-top: 0.5rem;
+        padding-right: 120px;
+        font-size: 16px;
+        line-height: 20px;
+        border-top:2px solid rgba(221,221,221,1);
+        position: relative;
+        text-align: left;
+    }
+    .game_tag:after {
+        content: "详细信息";
+        width: 86px;
+        /*height: 20px;*/
+        line-height: 20px;
+        position: absolute;
+        overflow: hidden;
+        top:-2px;
+        right: 20px;
+        background-color: #f2f2f3;
+        border: 1px solid #888 ;
+        border-top: 2px solid #f2f2f3;
+        z-index: 2;
+        padding: 0.2rem 0;
+        padding-left: 16px;
     }
     .game_tag em {
         padding: 1.5px .2rem;

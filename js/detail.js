@@ -72,6 +72,18 @@
 // jquery
 (function($) {
     $(function() {
+
+        function adapt_screen() {
+            if ($(window).outerWidth() < 768) {
+                if ($("table").hasClass('table'))
+                    $("table").removeClass('table');
+            } else {
+                if (!$("table").hasClass('table'))
+                    $("table").addClass('table');
+            }
+
+        }
+        adapt_screen();
         //nav scroll
         (function() {
             // middle_nav binding scroll event
@@ -145,6 +157,7 @@
             $(window).on("resize", function() {
                 console.log("resize");
                 nav_position();
+                adapt_screen();
             });
         })();
 
@@ -186,7 +199,9 @@
                             $(this).css("bottom", "15px");
                         });
 
-                        $("body").animate({ "scrollTop": 0 }, 600);
+                        $("body").animate({
+                            "scrollTop": 0
+                        }, 600);
                     }
                 }
 

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Game Show">
     <link rel="stylesheet" type="text/css" href="../css/reset.css" />
     <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../css/style.css" rel="stylesheet" type="text/css">
+    <link href="../css/index.css" rel="stylesheet" type="text/css">
     <!--[if lt IE 9]>
         <script src="//cdn.bootcss.com/json2/20150503/json2.min.js"></script>
         <script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -24,8 +24,7 @@
                 <div class="container-fluid">
                     <!-- Brand and toggle get grouped for better mobile display -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                            <!--<span class="sr-only">Toggle navigation</span>//?????????????????-->
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meun" aria-expanded="false">
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -33,24 +32,18 @@
                         <a class="navbar-brand" href="index.html">Game Show</a>
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <div class="collapse navbar-collapse" id="meun">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页<!--<span class="sr-only">(current)</span>--></a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>单机游戏</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-tag" aria-hidden="true"></span>主机游戏</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a></li>
-                                    <li><a href="#">Another action</a></li>
-                                    <li><a href="#">Something else here</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">Separated link</a></li>
-                                    <li role="separator" class="divider"></li>
-                                    <li><a href="#">One more separated link</a></li>
-                                </ul>
-                            </li>
+                            <li class="active"><a href="index.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i>首页</a></li>
+                            <li><a href="#"><i class="iconfont">&#xe60b;</i>单机游戏</a></li>
+                            <li><a href="#"><i class="iconfont">&#xe63d;</i>主机游戏</a></li>
                         </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group" style="">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Start</button>
+                        </form>
                     </div>
                     <!-- /.navbar-collapse -->
                 </div>

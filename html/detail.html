@@ -15,120 +15,163 @@
 </head>
 
 <body ng-app="detail">
-<section class="Top"></section>
-    <!-- detail_head start -->
-    <section ng-controller="detail_head" class="detail_head">
-        <h1>{{data.game_title}}</h1>
-        <section class="game_info">
-            <section class="cover">
-                <img ng-src="{{data.game_cover}}" alt="" style="position: relative;z-index: 2;">
-            </section>
-            <section class="info_section">
-                <table>
-                    <tr>
-                        <td>中文名称:</td>
-                        <td>{{data.game_cn_name}}</td>
-                        <td>英文名称:</td>
-                        <td>{{data.game_en_name}}</td>
-                    </tr>
-                    <tr>
-                        <td>发布日期:</td>
-                        <td>{{data.game_release_time}}</td>
-                        <td>游戏制作:</td>
-                        <td>{{data.game_maker}}</td>
-                    </tr>
-                    <tr>
-                        <td>游戏发行:</td>
-                        <td>{{data.game_business}}</td>
-                        <td>文件大小:</td>
-                        <td>{{data.game_size}}</td>
-                    </tr>
-                    <tr>
-                        <td>游戏语言:</td>
-                        <td>{{data.game_language}}</td>
-                        <td>运行系统:</td>
-                        <td>{{data.game_exe_system}}</td>
-                    </tr>
-                </table>
-            </section>
-            <section class="game_tag">
-                <em class="tag"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></em><em ng-repeat="(key, value) in data.tag">{{value}}</em>
+    <!-- 返回页面顶部 -->
+    <section class="Top"></section>
+    <header>
+        <section class="section_nav">
+            <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meun" aria-expanded="false">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Game Show</a>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="meun">
+                        <ul class="nav navbar-nav">
+                            <li class=""><a href="index.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i>首页</a></li>
+                            <li><a href="#"><i class="iconfont">&#xe60b;</i>单机游戏</a></li>
+                            <li><a href="#"><i class="iconfont">&#xe63d;</i>主机游戏</a></li>
+                        </ul>
+                        <form class="navbar-form navbar-left" role="search">
+                            <div class="form-group" style="">
+                                <input type="text" class="form-control" placeholder="Search">
+                            </div>
+                            <button type="submit" class="btn btn-default">Start</button>
+                        </form>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </section>
+    </header>
+    <main class="detail">
+        <!-- detail_head start -->
+        <section ng-controller="detail_head" class="detail_head">
+            <h1>{{data.game_title}}</h1>
+            <section class="game_info clearfix">
+                <div class="col-sm-4 center-block">
+                    <section class="cover">
+                        <img ng-src="{{data.game_cover}}" alt="" style="position: relative;z-index: 2;">
+                    </section>
+                </div>
+                <section class="info_section col-sm-8">
+                    <table class="table">
+                        <tr>
+                            <td>中文名称:</td>
+                            <td>{{data.game_cn_name}}</td>
+                            <td>英文名称:</td>
+                            <td>{{data.game_en_name}}</td>
+                        </tr>
+                        <tr>
+                            <td>发布日期:</td>
+                            <td>{{data.game_release_time}}</td>
+                            <td>游戏制作:</td>
+                            <td>{{data.game_maker}}</td>
+                        </tr>
+                        <tr>
+                            <td>游戏发行:</td>
+                            <td>{{data.game_business}}</td>
+                            <td>文件大小:</td>
+                            <td>{{data.game_size}}</td>
+                        </tr>
+                        <tr>
+                            <td>游戏语言:</td>
+                            <td>{{data.game_language}}</td>
+                            <td>运行系统:</td>
+                            <td>{{data.game_exe_system}}</td>
+                        </tr>
+                    </table>
+                </section>
+                <section class="game_tag col-sm-8">
+                    <em class="tag"><span class="glyphicon glyphicon-flag" aria-hidden="true"></span></em><em ng-repeat="(key, value) in data.tag">{{value}}</em>
+                </section>
             </section>
         </section>
-    </section>
-    <!-- detail_head end -->
-    <section ng-controller="detail_body" class="detail_body">
-        <!-- detail_nav start -->
-        <nav class="middle_nav">
-            <ul class="nav_list clearfix">
-                <li class="active"><i class="iconfont">&#xe620;</i>游戏介绍</li>
-                <li><i class="iconfont">&#xe6e5;</i>游戏下载</li>
-            </ul>
-        </nav>
-        <nav class="nav_hold"></nav>
-        <!-- detail_nav end -->
-        <!-- game_introduction start-->
-        <section>
-            <pre ng-repeat="(key, value) in data.game_info">{{value}}</pre>
-        </section>
-        <!-- game_introduction end -->
-        <!-- game_video start-->
-        <section class="game_video">
-            <h3>游戏视频</h3>
+        <!-- detail_head end -->
+        <section ng-controller="detail_body" class="detail_body clearfix">
+            <!-- detail_nav start -->
+            <nav class="middle_nav">
+                <ul class="nav_list clearfix">
+                    <li class="active"><i class="iconfont">&#xe620;</i>游戏介绍</li>
+                    <li><i class="iconfont">&#xe6e5;</i>游戏下载</li>
+                </ul>
+            </nav>
+            <nav class="nav_hold"></nav>
+            <!-- detail_nav end -->
+            <!-- game_introduction start-->
             <section>
-                <!-- <video controls src="../video/gumu.mp4" poster="../image/poster.jpg">
+                <pre ng-repeat="(key, value) in data.game_info">{{value}}</pre>
+            </section>
+            <!-- game_introduction end -->
+            <!-- game_video start-->
+            <section class="game_video">
+                <h3>游戏视频</h3>
+                <section>
+                    <!-- <video controls src="../video/gumu.mp4" poster="../image/poster.jpg">
                     <source type="video/mp4" src="../video/gumu.mp4">    
                 </video> -->
-                <video controls ng-src="{{data.game_video}}" poster="{{data.video_poster}}">
-                    <source type="video/mp4" ng-src="{{data.game_video}}">
-                </video>
-                <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
-                    <param name="allowFullScreen" value="true">
-                    <param name="allowScriptAccess" value="always">
-                    <param name="movie" value="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf">
-                    <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=6bfe5b183f11e7d9&amp;isAutoPlay=false&amp;isShowRelatedVideo=false">
-                </object>
+                    <video controls ng-src="{{data.game_video}}" poster="{{data.video_poster}}">
+                        <source type="video/mp4" ng-src="{{data.game_video}}">
+                    </video>
+                    <object hidden type="application/x-shockwave-flash" data="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf" width="100%" height="100%" id="youku-player">
+                        <param name="allowFullScreen" value="true">
+                        <param name="allowScriptAccess" value="always">
+                        <param name="movie" value="http://player.youku.com/player.php/sid/XMjcyODI5MzI4/partnerid/6bfe5b183f11e7d9/v.swf">
+                        <param name="flashvars" value="imglogo=&amp;paid=0&amp;partnerId=6bfe5b183f11e7d9&amp;isAutoPlay=false&amp;isShowRelatedVideo=false">
+                    </object>
+                </section>
             </section>
-        </section>
-        <!-- game_video end-->
-        <!-- game_image start-->
-        <section class="game_image">
-            <h3>游戏截图</h3>
-            <section class="img_block">
-                <ul id="lightslider">
-                    <li data-thumb="../image/1.jpg"><img src="../image/1.jpg" alt=""></li>
-                    <li ng-repeat="(key, value) in data.game_image" data-thumb="{{value}}"><img ng-src="{{value}}" img-path-load></li>
-                    <li data-thumb="../image/10.jpg"><img src="../image/10.jpg" alt=""></li>
-                </ul>
-            </section>
-        </section>
-        <!-- game_image end-->
-        <section style="" class="game_download">
-            <h3>游戏下载</h3>
-            <section class="center-block">
-                <button type="button" class="btn btn-info"><a ng-href="{{data.torrent}}" style="color:#fff;text-decoration:none;">BT下载</a></button>
-            </section>
-        </section>
-        <section class="game_statement">
-            <section class="">
-                <h3>版本及运行说明</h3>
-                <pre>{{data.version}}</pre>
-            </section>
-            <section class="">
-                <h3>常见问题</h3>
-                <div class="QA">
-                    <ul class="">
-                        <li ng-href="{{value.href}}" ng-repeat="(key, value) in data.QA"><a ng-href="{{value.href}}">{{value.title}}</a></li>
+            <!-- game_video end-->
+            <!-- game_image start-->
+            <section class="game_image">
+                <h3>游戏截图</h3>
+                <section class="img_block">
+                    <ul id="lightslider">
+                        <li data-thumb="../image/1.jpg"><img src="../image/1.jpg" alt=""></li>
+                        <li ng-repeat="(key, value) in data.game_image" data-thumb="{{value}}"><img ng-src="{{value}}" img-path-load></li>
+                        <li data-thumb="../image/10.jpg"><img src="../image/10.jpg" alt=""></li>
                     </ul>
-                </div>
+                </section>
+            </section>
+            <!-- game_image end-->
+            <section style="" class="game_download">
+                <h3>游戏下载</h3>
+                <section class="center-block">
+                    <button type="button" class="btn btn-info"><a ng-href="{{data.torrent}}" style="color:#fff;text-decoration:none;">BT下载</a></button>
+                </section>
+            </section>
+            <section class="game_statement">
+                <section class="col-sm-6">
+                    <div class="row">
+                        <h3>版本及运行说明</h3>
+                        <pre>{{data.version}}</pre>
+                    </div>
+                </section>
+                <section class="col-sm-6">
+                    <div class="row">
+                        <h3>常见问题</h3>
+                        <div class="QA">
+                            <ul class="">
+                                <li ng-href="{{value.href}}" ng-repeat="(key, value) in data.QA"><a ng-href="{{value.href}}">{{value.title}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
             </section>
         </section>
-    </section>
-    <section class="detail_footer">
-        <img src="../image/footer.jpg" style="max-width:100%" alt="">
-    </section>
+        <section class="detail_footer">
+            <img src="../image/footer.jpg" style="max-width:100%" alt="">
+        </section>
+    </main>
 </body>
 <script src="../js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
 <script src="../js/detail_data.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="../js/lightslider.js" charset="utf-8"></script>
 <script src="../js/angular.js" type="text/javascript" charset="utf-8"></script>
