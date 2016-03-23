@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1.0,user-scalable=no,minimum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="" />
+    <script type="application/x-javascript">
+    // addEventListener("load", function() {
+    //     setTimeout(hideURLbar, 0);
+    // }, false);
+
+    // function hideURLbar() {
+    //     window.scrollTo(0, 1);
+    // }
+    </script>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="../css/register.css" rel='stylesheet' type='text/css' media="all" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#meun" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">Game Show</a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="meun">
+                    <ul class="nav navbar-nav">
+                        <li class=""><a href="index.html"><i class="glyphicon glyphicon-home" aria-hidden="true"></i>首页</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe60b;</i>单机游戏</a></li>
+                        <li><a href="#"><i class="iconfont">&#xe63d;</i>主机游戏</a></li>
+                    </ul>
+                    <form class="navbar-form navbar-right" role="search">
+                        <div class="form-group" style="">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default" style="vertical-align: baseline;">Start</button>
+                    </form>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div class="content col-sm-8 col-md-10 col-xs-12">
+        <div class="p1 clearfix">
+            <h1>欢迎注册jimoji游戏平台账号</h1>
+            <p></p>
+            <form action="123.php" method="post" class="clearfix">
+                <!-- 用户名 -->
+                <div class="username col-sm-10">
+                    <span class="glyphicon glyphicon-user input_head" aria-hidden="true"></span>
+                    <input type="text" name="userid" value="用户名/Email" data-toggle="tooltip" data-title="含有敏感字符" data-placement="bottom" data-trigger="manual" />
+                    <i class="symbol glyphicon glyphicon-remove" aria-hidden="true"></i>
+                    <span class="hint"></span>
+                </div>
+                <!-- 邮箱 -->
+                <div class="email col-sm-10">
+                    <span class="glyphicon glyphicon-envelope input_head" aria-hidden="true"></span>
+                    <input type="email" name="email" value="han@qq.com" data-toggle="tooltip" data-title="格式不符" data-placement="bottom" data-trigger="manual" />
+                    <i class="symbol glyphicon glyphicon-remove" aria-hidden="true"></i>
+                    <span class="hint"></span>
+                </div>
+                <!-- 输入密码 -->
+                <div class="hint col-sm-10">输入密码</div>
+                <div class="password col-sm-10">
+                    
+                    <span class="glyphicon glyphicon-asterisk input_head" aria-hidden="true"></span>
+                    <input type="password" name="psw" value="PASSWORD" data-toggle="tooltip" data-title="含有敏感字符" data-placement="bottom" data-trigger="manual" />
+                    <i class="symbol"></i>
+                </div>
+                <!-- 确认密码 -->
+                <div class="hint col-sm-10">确认密码</div>
+                <div class="check_password col-sm-10">
+
+                    <span class="glyphicon glyphicon-asterisk input_head" aria-hidden="true"></span>
+                    <input type="password" name="psw" value="PASSWORD" data-toggle="tooltip" data-title="密码不一致" data-placement="bottom" data-trigger="manual" />
+                    <i class="symbol"></i>
+                    <span class="hint"></span>
+                </div>
+            </form>
+        </div>
+        <div class="message">账号或者密码错误</div>
+        <div class="p2 clearfix">
+            <div class="col-xs-6">
+                <input type="submit" value="注册" />
+            </div>
+            <div class="col-xs-6">
+                <a href="login.html" style="padding: 10px;display:block;">登录</a>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    </footer>
+</body>
+<script type="text/javascript" src="../js/jquery.min.js"></script>
+<script type="text/javascript" src="../js/bootstrap.js"></script>
+<script type="text/javascript" src="../js/register.js"></script>
+
+</html>
