@@ -96,6 +96,7 @@
             function nav_position() {
                 // var nav_inite_top = nav.offset().top;
                 var nav_inite_top = $(".nav_hold").offset().top;
+                $(window).off("scroll");
                 $(window).scroll(function(e) {
                     // console.log(e.target);
                     // e.stopPropagation();
