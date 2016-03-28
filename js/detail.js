@@ -115,7 +115,7 @@
                     }
 
                     //区域绑定标签
-                    if (!$("body").is(":animated")) {
+                    if (!$("body,html").is(":animated")) {
                         if (game_download.offset().top - $(this).scrollTop() < $(this).outerWidth() / 2) {
                             if (!download_li.hasClass('active')) {
                                 download_li.addClass('active').siblings('li').removeClass('active');
@@ -172,11 +172,11 @@
                     $(this).addClass('active').siblings('li').removeClass('active');
                 }
                 if (this.childNodes[1].data == "游戏下载") {
-                    $("body").animate({
+                    $("html,body").animate({
                         scrollTop: ($(".game_download").offset().top - 30)
                     }, 1000);
                 } else {
-                    $("body").animate({
+                    $("html,body").animate({
                         scrollTop: ($(".detail_body").offset().top - 10)
                     }, 1000);
                 }
@@ -200,7 +200,7 @@
                             $(this).css("bottom", "15px");
                         });
 
-                        $("body").animate({
+                        $("html,body").animate({
                             "scrollTop": 0
                         }, 600);
                     }
