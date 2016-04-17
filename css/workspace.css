@@ -1,0 +1,8 @@
+.content>section:not(:first-child){display:none;}
+.add-game-info,.add-game-news{background-color:#fff;}
+/* .btn-primary:active{background-color:#3c8dbc;border-color:#367fa9;box-shadow:none;} */
+.btn-primary:active:hover{background-color:#3c8dbc;border-color:#367fa9;box-shadow:none;}
+.btn-primary:hover{background-color:#3c8dbc;border-color:#367fa9;}
+.form-box{padding:10px;}
+.explain{border:1px solid #367fa9;background-color:#3c8dbc;padding:6px;color:#fff;margin-right:auto;}
+
