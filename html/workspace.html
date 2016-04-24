@@ -23,6 +23,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           apply the skin class to the body tag so the changes take effect.
     -->
     <link rel="stylesheet" href="../css/skin-blue.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/edit.css">
     <link rel="stylesheet" type="text/css" href="../css/workspace.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -114,8 +115,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
           <ul class="sidebar-menu">
             <li class="header">主导航</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="active"><a href="javascript:;"><i class="fa fa-edit"></i> <span>添加游戏信息</span></a></li>
-            <li><a href="javascript:;"><i class="fa fa-edit"></i> <span>添加游戏咨询</span></a></li>
+            <li class="active"><a href="javascript:;"><i class="fa fa-edit"></i> <span>添加/编辑游戏信息</span></a></li>
+            <li><a href="javascript:;"><i class="fa fa-edit"></i> <span>添加/编辑游戏咨询</span></a></li>
+            <li><a href="javascript:;"><i class="fa fa-edit"></i> <span>已添加的游戏信息</span></a></li>
+            <li><a href="javascript:;"><i class="fa fa-edit"></i> <span>已添加的游戏咨询</span></a></li>
             <!-- <li class="treeview">
               <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>
               <ul class="treeview-menu">
@@ -133,7 +136,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            添加
+            添加/编辑
             <small>游戏信息</small>
           </h1>
           <ol class="breadcrumb">
@@ -318,11 +321,165 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <input type="text" name="news_author" placeholder="作者/编辑" class="form-control">   
               </div>
            </div>
-           <div class="form-box" style="text-align: center">
+           <!-- ----------------------------------------------------------------------------------------------------- -->
+
+           <section class="edit-tool">
+            <div class="btn-toolbar" data-role="editor-toolbar" data-target="#editor">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font"><i class="fa fa-font" aria-hidden="true"></i><b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a data-edit="fontName Serif" style="font-family:'Serif'">Serif</a></li>
+                        <li><a data-edit="fontName Sans" style="font-family:'Sans'">Sans</a></li>
+                        <li><a data-edit="fontName Arial" style="font-family:'Arial'">Arial</a></li>
+                        <li><a data-edit="fontName Arial Black" style="font-family:'Arial Black'">Arial Black</a></li>
+                        <li><a data-edit="fontName Courier" style="font-family:'Courier'">Courier</a></li>
+                        <li><a data-edit="fontName Courier New" style="font-family:'Courier New'">Courier New</a></li>
+                        <li><a data-edit="fontName Comic Sans MS" style="font-family:'Comic Sans MS'">Comic Sans MS</a></li>
+                        <li><a data-edit="fontName Helvetica" style="font-family:'Helvetica'">Helvetica</a></li>
+                        <li><a data-edit="fontName Impact" style="font-family:'Impact'">Impact</a></li>
+                        <li><a data-edit="fontName Lucida Grande" style="font-family:'Lucida Grande'">Lucida Grande</a></li>
+                        <li><a data-edit="fontName Lucida Sans" style="font-family:'Lucida Sans'">Lucida Sans</a></li>
+                        <li><a data-edit="fontName Tahoma" style="font-family:'Tahoma'">Tahoma</a></li>
+                        <li><a data-edit="fontName Times" style="font-family:'Times'">Times</a></li>
+                        <li><a data-edit="fontName Times New Roman" style="font-family:'Times New Roman'">Times New Roman</a></li>
+                        <li><a data-edit="fontName Verdana" style="font-family:'Verdana'">Verdana</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a data-edit="fontSize 5">
+                                <font size="5">Huge</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 3">
+                                <font size="3">Normal</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a data-edit="fontSize 1">
+                                <font size="1">Small</font>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="bold" title="" data-original-title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold" aria-hidden="true"></i></a>
+                    <a class="btn" data-edit="italic" title="" data-original-title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic" aria-hidden="true"></i></a>
+                    <a class="btn" data-edit="strikethrough" title="" data-original-title="Strikethrough"><i class="fa fa-strikethrough" aria-hidden="true"></i></a>
+                    <a class="btn" data-edit="underline" title="" data-original-title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="insertunorderedlist" title="" data-original-title="Bullet list"><i class="fa fa-list-ul"></i></a>
+                    <a class="btn" data-edit="insertorderedlist" title="" data-original-title="Number list"><i class="fa fa-list-ol"></i></a>
+                    <a class="btn" data-edit="indent" title="" data-original-title="Indent (Tab)"><i class="fa fa-indent"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-info" data-edit="justifyleft" title="" data-original-title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
+                    <a class="btn" data-edit="justifycenter" title="" data-original-title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
+                    <a class="btn" data-edit="justifyright" title="" data-original-title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
+                    <a class="btn" data-edit="justifyfull" title="" data-original-title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" title="" data-original-title="Hyperlink"><i class="fa fa-link"></i></a>
+                    <div class="dropdown-menu input-append">
+                        <input class="span2" placeholder="URL" type="text" data-edit="createLink">
+                        <button class="btn" type="button">Add</button>
+                    </div>
+                    <a class="btn" data-edit="unlink" title="" data-original-title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
+                </div>
+                <div class="btn-group">
+                    <a class="btn" title="" id="pictureBtn" data-original-title="Insert picture (or just drag &amp; drop)"><i class="fa fa-picture-o"></i></a>
+                    <input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" style="opacity: 0; position: absolute; top: 0px; left: 0px; width: 37px; height: 30px;">
+                </div>
+                <div class="btn-group">
+                    <a class="btn" data-edit="undo" title="" data-original-title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
+                    <a class="btn" data-edit="redo" title="" data-original-title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
+                </div>
+                <input type="text" data-edit="inserttext" id="voiceBtn" x-webkit-speech="" style="display: none;">
+            </div>
+            <div id="editor" contenteditable="true">
+                edit
+            </div>
+          </section>
+
+           <!-- ----------------------------------------------------------------------------------------------------- -->
+           <div class="form-box">
              <button class="btn btn-success">提交</button>
              <button class="btn btn-warning">重置</button>
            </div>
           </form>
+        </section>
+
+        <section class="loaded-game-info">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">Responsive Hover Table</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search for ID">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                  <table class="table table-hover">
+                    <tbody><tr>
+                      <th>ID</th>
+                      <th>最后编辑者</th>
+                      <th>编辑日期</th>
+                      <th>游戏名</th>
+                      <th>摘要</th>
+                    </tr>
+                    <tr>
+                      <td>183</td>
+                      <td>John</td>
+                      <td>2016-4-1</td>
+                      <td>古墓丽影3</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alex</td>
+                      <td>2016-4-2</td>
+                      <td>神秘海域4</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob</td>
+                      <td>2016-4-3</td>
+                      <td>黑暗之魂3</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike</td>
+                      <td>2016-4-4</td>
+                      <td>桃花侠大战菊花怪</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
+        </section>
+        
+        <section class="loaded-game-news">
+          
         </section>
         
         </section><!-- /.content -->
@@ -402,8 +559,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- jQuery 2.1.4 -->
     <script src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.hotkeys.js"></script>
     <!-- Bootstrap 3.3.5 -->
     <script src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap-wysiwyg.js"></script>
     <!-- AdminLTE App -->
     <script src="../js/app.min.js"></script>
     <script type="text/javascript" src="../js/workspace.js"></script>
