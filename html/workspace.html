@@ -15,7 +15,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- Font Awesome -->
     <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Ionicons -->
-    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+    <link href="http://cdn.bootcss.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <!-- Theme style -->
     <link rel="stylesheet" href="../css/AdminLTE.min.css">
     <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -413,12 +414,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </form>
         </section>
 
-        <section class="loaded-game-info">
+        <section class="loaded-game-news">
           <div class="row">
             <div class="col-xs-12">
               <div class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Responsive Hover Table</h3>
+                  <h3 class="box-title">游戏资讯表</h3>
                   <div class="box-tools">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search for ID">
@@ -428,13 +429,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     </div>
                   </div>
                 </div><!-- /.box-header -->
-                <div class="box-body table-responsive">
+                <div class="box-body table-responsive no-padding">
                   <table class="table table-hover">
                     <tbody><tr>
                       <th>ID</th>
-                      <th>最后编辑者</th>
+                      <th>作者</th>
                       <th>编辑日期</th>
-                      <th>游戏名</th>
+                      <th>题目</th>
                       <th>摘要</th>
                     </tr>
                     <tr>
@@ -454,21 +455,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
                       <td>Alex</td>
                       <td>2016-4-2</td>
                       <td>神秘海域4</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td>657</td>
                       <td>Bob</td>
                       <td>2016-4-3</td>
                       <td>黑暗之魂3</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
                     </tr>
                     <tr>
                       <td>175</td>
                       <td>Mike</td>
                       <td>2016-4-4</td>
                       <td>桃花侠大战菊花怪</td>
-                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
                     </tr>
                   </tbody>
                   </table>
@@ -478,8 +494,84 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </div>
         </section>
         
-        <section class="loaded-game-news">
-          
+        <section class="loaded-game-info">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="box">
+                <div class="box-header">
+                  <h3 class="box-title">游戏信息表</h3>
+                  <div class="box-tools">
+                    <div class="input-group" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control input-sm pull-right" placeholder="Search for ID">
+                      <div class="input-group-btn">
+                        <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
+                      </div>
+                    </div>
+                  </div>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                  <table class="table table-hover">
+                    <tbody><tr>
+                      <th>ID</th>
+                      <th>作者</th>
+                      <th>编辑日期</th>
+                      <th>游戏名</th>
+                      <th>标签</th>
+                    </tr>
+                    <tr>
+                      <td>183</td>
+                      <td>John</td>
+                      <td>2016-4-1</td>
+                      <td>古墓丽影3</td>
+                      <td>动作游戏、潜入暗杀
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>219</td>
+                      <td>Alex</td>
+                      <td>2016-4-2</td>
+                      <td>神秘海域4</td>
+                      <td>动作游戏、冒险
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>657</td>
+                      <td>Bob</td>
+                      <td>2016-4-3</td>
+                      <td>黑暗之魂3</td>
+                      <td>教你做人
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>175</td>
+                      <td>Mike</td>
+                      <td>2016-4-4</td>
+                      <td>桃花侠大战菊花怪</td>
+                      <td>无厘头、搞笑
+                        <div class="tools">
+                          <i class="fa fa-edit"></i>
+                          <i class="fa fa-trash-o"></i>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                  </table>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+            </div>
+          </div>
         </section>
         
         </section><!-- /.content -->

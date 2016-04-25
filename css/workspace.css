@@ -7,4 +7,6 @@
 .explain{border:1px solid #367fa9;background-color:#3c8dbc;padding:6px;color:#fff;margin-right:auto;}
 .edit-tool{padding:10px;}
 #editor{overflow:auto;max-height:300px;}
-.table tr .tools{float: right;color:red;display:none;}
+/*.table tr{position: relative;}*/
+.table tr td:last-child{position: relative;padding-right: 35px;}
+.table tr .tools{position:absolute;color:red;display:none;top:50%;right: 5px;transform: translate(0,-50%);-webkit-transform: translate(0,-50%);-ms-transform: translate(0,-50%);-moz-transform: translate(0,-50%);cursor: pointer;}

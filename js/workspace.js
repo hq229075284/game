@@ -30,13 +30,25 @@
 			
 		}
 	});
-
-	$(".table tr").mouseenter(function(event) {
+	//$(".table tr td").mouseenter(function(event) {
+	//	/* Act on the event */
+	//	event.preventDefault();
+	//	event.stopPropagation();
+	//});
+	// $(".table tr td").mouseout(function(event) {
+	// 	/* Act on the event */
+	// 	event.preventDefault();
+	// 	event.stopPropagation();
+	// });
+	$(".table tr").mouseover(function(event) {
 		/* Act on the event */
 		$(this).find(".tools").css("display","block");
-		$(this).one('mouseout', function(event) {
-			/* Act on the event */
-			$(this).find(".tools").hide();
-		});
+		// console.log(event);
+		// console.log($(this));
 	});	
+	$(".table tr").on('mouseout', function(event) {
+		/* Act on the event */
+		//console.log(event);
+		$(this).find(".tools").hide();
+	});
 })(jQuery);
