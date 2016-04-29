@@ -249,9 +249,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <span class="input-group-btn">
                     <lable class="btn btn-primary btn-flat"><i class="fa fa-image"></i>&nbsp游戏封面</lable>
                   </span>
-                  <input type="file" name="game_image" placeholder="游戏截图" class="form-control">
+                  <input type="file" name="" placeholder="游戏封面" style="display: none;">
+                  <input type="text" name="game_cover" placeholder="游戏封面" class="form-control">   
                   <span class="input-group-btn">
-                    <lable class="btn btn-primary btn-flat"><i class="fa fa-cloud-upload"></i>上传</lable>
+                    <lable class="btn btn-primary btn-flat upload"><i class="fa fa-cloud-upload"></i>上传</lable>
                   </span>   
                 </div>
            </div>
@@ -260,9 +261,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <span class="input-group-btn">
                     <lable class="btn btn-primary btn-flat"><i class="fa fa-image"></i>&nbsp视频截图</lable>
                   </span>
-                  <input type="file" name="game_image" placeholder="游戏截图" class="form-control">
+                  <input type="file" name="" placeholder="视频截图" style="display: none;">
+                  <input type="text" name="video_poster" placeholder="视频截图" class="form-control">   
                   <span class="input-group-btn">
-                    <lable class="btn btn-primary btn-flat"><i class="fa fa-cloud-upload"></i>上传</lable>
+                    <lable class="btn btn-primary btn-flat upload"><i class="fa fa-cloud-upload"></i>上传</lable>
                   </span>   
                 </div>
            </div>
@@ -271,9 +273,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <span class="input-group-btn">
                     <lable class="btn btn-primary btn-flat"><i class="fa fa-image"></i>&nbsp游戏截图</lable>
                   </span>
-                  <input type="file" name="game_image" placeholder="游戏截图" class="form-control">
+                  <input type="file" name="" placeholder="游戏截图" style="display: none;">
+                  <input type="text" name="game_image" placeholder="游戏截图" class="form-control">  
                   <span class="input-group-btn">
-                    <lable class="btn btn-primary btn-flat"><i class="fa fa-cloud-upload"></i>上传</lable>
+                    <lable class="btn btn-primary btn-flat upload"><i class="fa fa-cloud-upload"></i>上传</lable>
                   </span>   
                 </div>
            </div>
@@ -578,6 +581,26 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
         <!-- --------------------------------------------------------------------------------------------- -->
       </div><!-- /.content-wrapper -->
+
+      <!-- 弹出框样式start -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm" style="display: none;">Small modal</button>
+      <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="tishi">
+          <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">提示</h4>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- 弹出框样式end -->
 
       <!-- Main Footer -->
       <footer class="main-footer">

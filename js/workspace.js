@@ -1,4 +1,10 @@
 (function($){
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+  		// alert("支持");  
+	} else {
+  		alert('您的浏览器不支持html5文件上传');
+	}
+
 	$("#editor").wysiwyg();
 	$(".sidebar-menu li").click(function(event) {
 		/* Act on the event */
@@ -30,25 +36,42 @@
 			
 		}
 	});
-	//$(".table tr td").mouseenter(function(event) {
-	//	/* Act on the event */
-	//	event.preventDefault();
-	//	event.stopPropagation();
-	//});
-	// $(".table tr td").mouseout(function(event) {
-	// 	/* Act on the event */
-	// 	event.preventDefault();
-	// 	event.stopPropagation();
-	// });
+	$("lable.upload").click(function(event) {
+		/* Act on the event */
+		$(this).parents(".input-group").find("input[type='file']").trigger('click');
+	});
+	$("input[type='file']").change(function(event) {
+		/* Act on the event */
+		var $this=$(this);
+		// console.log(event);
+		var file=event.target.files[0];
+		// console.log(file);
+		// console.log(file.type.match('image.*'));
+		if (!file.type.match('image.*')) {
+    		alert("请添加图片");
+    		return false;
+  		}
+  		 var reader = new FileReader();
+  		 reader.readAsDataURL(file);
+  		 // console.log(reader);
+  		 // alert("添加成功");
+  		 $(".modal").find('.modal-body').text("添加成功");
+  		 $("[data-toggle='modal']").trigger('click'); 
+  		 reader.onload=function(){
+  		 	// console.log(reader.result);
+  		 	// $this.siblings('input[type=text]').val(reader.result);
+  		 };
+	});
 	$(".table tr").mouseover(function(event) {
 		/* Act on the event */
 		$(this).find(".tools").css("display","block");
-		// console.log(event);
-		// console.log($(this));
 	});	
 	$(".table tr").on('mouseout', function(event) {
 		/* Act on the event */
-		//console.log(event);
 		$(this).find(".tools").hide();
+	});
+	$(".fa.fa-trash-o").click(function(event) {
+		/* Act on the event */
+		$(this).parents("tr").css("display","none");
 	});
 })(jQuery);
